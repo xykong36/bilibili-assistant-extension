@@ -1,0 +1,1 @@
+chrome.runtime.onMessage.addListener((function(r,n,t){if("queryData"===r.action){var e=r.keyword;return fetch("http://1.12.225.184:8000/search?author=".concat(e)).then((function(r){return r.json()})).then((function(r){return t(r)})).catch((function(r){return console.error("Error:",r)})),!0}}));
