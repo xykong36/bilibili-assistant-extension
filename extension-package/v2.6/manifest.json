@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "bilibili哔哩哔哩推荐助手",
+  "version": "2.6",
+  "description": "通过机器学习算法推荐B站相似Up主来寻找相关视频，你的B站探索助手",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkYcT3w6OUBDLAlqg7VrdbjiBxikmeg7K13Z7DasEhM8jp9l5Zvw9GBMPyFeNQ12WqaYU5bAjDC3t8wPA2KOuAqUQFs65z7lNrOspbW08it9AoFWIJfulC/t6y8lnerrzq8gux9m+ktOthVlSivfRLq6sEFJCHHN/gdQBFyuwVR6K7usMRyyJDahTw3glyBvdzP7wJlBxAsceOourZ0+KmxJdCU/czVjyVJf4ochUTXqiURlsVfyXwQagR9Q/TnSanQvrpTAvsR/RZ0UMqulNj4DiTOvBIQlxPboMFXa6+a0koE1xoVuw4PjlDpWZwYWX+6bnkBtAsq3PkoKvJuSejwIDAQAB",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "css": [
+        "output.css"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "matches": [
+        "https://www.bilibili.com/video/*"
+      ]
+    }
+  ],
+  "permissions": [],
+  "host_permissions": [
+    "https://bili.api.lingohow.cn/*"
+  ]
+}
